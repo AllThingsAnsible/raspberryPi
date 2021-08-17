@@ -1,0 +1,7 @@
+---
+  - name: Shutdown servers
+    become: yes
+    hosts: all
+    tasks:
+      - name: Shutdown the Pi Servers
+        shell: shutdown now
