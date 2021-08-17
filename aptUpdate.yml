@@ -1,0 +1,15 @@
+---
+  - name: Update raspberry pi OS
+    become: yes
+    hosts: all
+    tasks:
+      - name: Update the OS
+        shell: apt-get update
+      - name: Update cache
+        apt:
+          upgrade: full
+          update_cache: yes
+      - name: Install firewall
+        apt:
+          name: ufw
+          state: present
