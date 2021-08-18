@@ -3,7 +3,21 @@
     hosts: all
     become: yes
     tasks:
+
+      - name: Create directory for audio file
+        file:
+          name: /home/pi/audio
+          group: 'pi'
+          owner: 'pi'
+          mode: '0770'
+ 
       - name: Get it
-        fetch:
-          src: /Users/daniel/Desktop/MedMusic/mixkit-1980-290.mp3
-          dest: /home/vagrant/
+        get_url:
+          url: https://assets.mixkit.co/music/download/mixkit-spirit-in-the-woods-139.mp3
+          dest: /home/pi/audio/
+          owner: 'pi'
+          group: 'pi'
+          mode: '0770'
+
+       - name: Play the audio
+         shell: vlc /home/pi/audio/mixkit-spirit-in-the-woods-139.mp3
