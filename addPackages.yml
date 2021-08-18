@@ -7,14 +7,14 @@
         apt:
           name: ansible
           state: present
-        tag: ansible
+        tags: ansible
       - name: Install Vim
         apt:
           name: vim
           state: present
-        tag: vim
+        tags: vim
       - name: Install VLC Media player
         apt:
           name: vlc
           state: present
-        tag: vlc
+        tags: vlc
