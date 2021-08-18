@@ -10,6 +10,7 @@
           group: 'pi'
           owner: 'pi'
           mode: '0770'
+          state: directory
  
       - name: Get it
         get_url:
