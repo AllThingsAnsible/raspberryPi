@@ -9,7 +9,7 @@
           group: 'pi'
           owner: 'pi'
           mode: '0770'
-          state: directoriy
+          state: directory
         become: yes
  
       - name: Get it
