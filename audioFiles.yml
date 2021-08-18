@@ -1,0 +1,9 @@
+---
+  - name: Get audio file from Mac
+    hosts: all
+    become: yes
+    tasks:
+      - name: Get it
+        fetch:
+          src: /Users/daniel/Desktop/MedMusic/mixkit-1980-290.mp3
+          dest: /home/vagrant/
