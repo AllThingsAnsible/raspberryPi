@@ -19,5 +19,5 @@
           group: 'pi'
           mode: '0770'
 
-       - name: Play the audio
-         shell: vlc /home/pi/audio/mixkit-spirit-in-the-woods-139.mp3
+      - name: Play the audio
+        shell: vlc /home/pi/audio/mixkit-spirit-in-the-woods-139.mp3
