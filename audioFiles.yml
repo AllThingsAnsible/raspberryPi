@@ -1,7 +1,6 @@
 ---
   - name: Get audio file from Mac
     hosts: all
-    become: yes
     tasks:
 
       - name: Create directory for audio file
@@ -10,7 +9,8 @@
           group: 'pi'
           owner: 'pi'
           mode: '0770'
-          state: directory
+          state: directoriy
+        become: yes
  
       - name: Get it
         get_url:
@@ -19,6 +19,7 @@
           owner: 'pi'
           group: 'pi'
           mode: '0770'
+        become: yes
 
       - name: Play the audio
         shell: vlc /home/pi/audio/mixkit-spirit-in-the-woods-139.mp3
