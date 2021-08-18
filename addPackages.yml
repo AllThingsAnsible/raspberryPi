@@ -1,0 +1,20 @@
+---
+  - name: Add packages to server
+    become: yes
+    hosts: all
+    tasks:
+      - name: Install Ansible
+        apt:
+          name: ansible
+          state: present
+        tag: ansible
+      - name: Install Vim
+        apt:
+          name: vim
+          state: present
+        tag: vim
+      - name: Install VLC Media player
+        apt:
+          name: vlc
+          state: present
+        tag: vlc
